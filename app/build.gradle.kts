@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -32,6 +33,28 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+afterEvaluate{
+    publishing{
+        publications{
+            create<MavenPublication>("release") {
+                from(components.findByName("release")!!)
+                groupId = "com.github.truworth"
+                artifactId = "junit-aar-release"
+                version = "1.0.0"
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
     }
 }
 
