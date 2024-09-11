@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "JUnitTest"
 include(":app")
+include(":junit-aar")
