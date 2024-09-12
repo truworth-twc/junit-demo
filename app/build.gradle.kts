@@ -49,7 +49,7 @@ afterEvaluate{
                 from(components.findByName("release")!!)
                 groupId = "com.github.truworth"
                 artifactId = "junit-aar-release"
-                version = "1.0.7"
+                version = "1.0.8"
             }
         }
         repositories {
