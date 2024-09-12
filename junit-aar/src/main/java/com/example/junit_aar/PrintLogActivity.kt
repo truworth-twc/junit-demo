@@ -5,7 +5,7 @@ import android.util.Log
 class PrintLogActivity {
     companion object{
         fun printLog(tagName : String,tagValue:String){
-            Log.e(tagName,"This is default value message Dynamic message : $tagValue")
+            Log.e(tagName,"Attached Dummy Text : $tagValue")
         }
     }
 }
